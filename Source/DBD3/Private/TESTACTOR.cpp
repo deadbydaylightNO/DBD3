@@ -2,6 +2,8 @@
 
 
 #include "TESTACTOR.h"
+#include "../../../../../../../Source/Runtime/Engine/Classes/Components/BoxComponent.h"
+#include "../../../../../../../Source/Runtime/Engine/Classes/Components/StaticMeshComponent.h"
 
 // Sets default values
 ATESTACTOR::ATESTACTOR()
@@ -9,6 +11,11 @@ ATESTACTOR::ATESTACTOR()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	boxComp = CreateDefaultSubobject<UBoxComponent>(TEXT("boxComp"));
+	this->SetRootComponent(boxComp);
+
+	meshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("meshComp"));
+	meshComp -> SetupAttachment(boxComp);
 }
 
 // Called when the game starts or when spawned
