@@ -16,6 +16,7 @@ ATESTACTOR::ATESTACTOR()
 
 	meshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("meshComp"));
 	meshComp -> SetupAttachment(boxComp);
+	//
 }
 
 // Called when the game starts or when spawned
